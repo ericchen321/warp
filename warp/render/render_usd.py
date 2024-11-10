@@ -381,6 +381,7 @@ class UsdRenderer:
         name: str,
         pos: tuple,
         rot: tuple,
+        scale: tuple,
         radius: float,
         half_height: float,
         parent_body: str = None,
@@ -426,7 +427,7 @@ class UsdRenderer:
         self._shape_constructors[name] = UsdGeom.Cylinder
 
         if not is_template:
-            _usd_set_xform(cylinder, pos, rot, (1.0, 1.0, 1.0), self.time)
+            _usd_set_xform(cylinder, pos, rot, scale, self.time)
 
         return prim_path
 
